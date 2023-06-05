@@ -2,8 +2,9 @@
 
 loop do
   puts 'Should I stop looping?'
-  answer = gets.chomp
-  if answer == 'yes'
+  answer = gets.chomp#.downcase to help with capitalize
+  if answer == 'yes' # || answer == "Yes" to help with capitalize
     break
   end
+  #puts "Incorrect. please answer 'yes'" to help user input
 end
