@@ -18,3 +18,4 @@ puts 'Confucius says:'
 puts '"' + get_quote('Confucius') + '"'
 
 # The first two if statements have to have return added to them because they are not implicitly returned 
+# could also be fixed by making last two if statements elsif 
