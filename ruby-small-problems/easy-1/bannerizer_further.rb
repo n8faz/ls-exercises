@@ -39,7 +39,7 @@ end
 
 def split_text(text)
   text_array = []
-  number_of_lines = (text.length / COLUMN_SIZE) + 1
+  number_of_lines = (text.length / COLUMN_SIZE.to_f).ceil #short for ceiling? Rounds a float up to a whole number
   number_of_lines.times do
     split_text = text.slice!(0, COLUMN_SIZE)
     if split_text.length == COLUMN_SIZE
