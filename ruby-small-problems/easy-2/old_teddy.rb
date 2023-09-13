@@ -5,4 +5,13 @@ def teddy_age
   puts "Teddy is #{age} years old!"
 end 
 
-teddy_age
+# Further Exploration
+
+def print_age(name = "Teddy")
+  age = rand(20..200)
+  puts "#{name} is #{age} years old!"
+end
+
+print_age
+
+print_age("n8")
