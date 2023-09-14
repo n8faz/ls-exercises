@@ -38,15 +38,11 @@ def get_sum_or_product
 end
 
 def calculate_sum(num)
-  sum = 0
-  (1..num).each { |num| sum += num }
-  sum
+  (1..num).inject(:+)
 end
 
 def calculate_product(num)
-  product = 1
-  (2..num).each { |num| product *= num }
-  product
+  (1..num).inject(:*)
 end
 
 def print_sum(num, sum)
