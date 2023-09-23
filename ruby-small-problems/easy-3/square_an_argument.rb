@@ -10,3 +10,9 @@ end
 
 p square(5) == 25
 p square(-8) == 64
+
+def nth_power(num, power)
+  multiply(num, 1) ** power
+end
+
+p nth_power(2, 5)
