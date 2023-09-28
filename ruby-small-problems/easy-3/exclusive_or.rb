@@ -3,9 +3,7 @@
 # In this exercise, you will write a method named xor that takes two arguments, and returns true if exactly one of its arguments is truthy, false otherwise. Note that we are looking for a boolean result instead of a truthy/falsey value as returned by || and &&.
 
 def xor?(operand1, operand2)
-  return true if operand1 && !operand2
-  return true if operand2 && !operand1
-  false
+  (operand1 || operand2) && !(operand1 && operand2)
 end
 
 p xor?(5.even?, 4.even?) == true
