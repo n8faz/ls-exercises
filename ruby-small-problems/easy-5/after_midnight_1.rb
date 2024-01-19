@@ -1,33 +1,18 @@
 require 'pry'
 
+MINUTES_PER_HOUR = 60
+HOURS_PER_DAY = 24
+MINUTES_PER_DAY = 1440
+
 def time_of_day(minutes)
-  converted = minutes.divmod(60)
-  hour = converted[0]
-  minute = converted[1]
-  string = ""
-  #binding.pry
-  if minutes == 0
-    string = "00:00"
-  elsif minutes > 0 && minutes < 1440
-    string = "#{format('%02d', hour)}:#{format('%02d', minute)}"
-  elsif minutes > 1439
-    hour = hour.divmod(24)[1]
-    string = "#{format('%02d', hour)}:#{format('%02d', minute)}"
-  elsif minutes < 0 && minutes > -1440
-    hour = 24 + hour
-    string = "#{format('%02d', hour)}:#{format('%02d', minute)}"
-  elsif minutes < -1439
-    hour = hour.divmod(24)[1]
-    #binding.pry
-    string = "#{format('%02d', hour)}:#{format('%02d', minute)}"
+  hour, minute = minutes.divmod(MINUTES_PER_HOUR)
+  if minutes >= MINUTES_PER_DAY || minutes <= -HOURS_PER_DAY
+    hour = hour.divmod(HOURS_PER_DAY)[1]
+  elsif minutes < 0 && minutes > -HOURS_PER_DAY
+    hour = HOURS_PER_DAY + hour
   end
-  string
-  #binding.pry
+  format('%02d:%02d', hour, minute)
 end
-
-
-
-
 
 p time_of_day(0) == "00:00"
 p time_of_day(-3) == "23:57"
