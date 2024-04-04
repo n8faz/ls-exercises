@@ -6,9 +6,10 @@ end
 
 def substrings(string)
   all_substrings = []
-  until string.empty?
+  str = string
+  until str.empty?
     all_substrings << leading_substrings(string)
-    string.delete_prefix!(string.chr)
+    str.delete_prefix!(str.chr)
   end
   all_substrings.flatten
 end
@@ -21,7 +22,7 @@ def palindromes(string)
   substrings(string).select { |substring| palindrome?(substring)}
 end
 
-
+p palindromes('knitting cassettes')
 p palindromes('abcd') == []
 p palindromes('madam') == ['madam', 'ada']
 p palindromes('hello-madam-did-madam-goodbye')== [

@@ -1,5 +1,5 @@
 def fizzbuzz(num1, num2)
-  p (num1..num2).map {|num| fizzbuzz_value(num)}.join(', ')
+  (num1..num2).map {|num| fizzbuzz_value(num)}.join(', ')
 end
 
 def fizzbuzz_value(num)
@@ -16,4 +16,4 @@ def fizzbuzz_value(num)
 end
 
 
-fizzbuzz(1, 15) # -> 1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz
+p fizzbuzz(1, 15) # -> 1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz

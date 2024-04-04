@@ -5,14 +5,15 @@ end
 
 def substrings(string)
   all_substrings = []
-  until string.empty?
+  str = string
+  until str.empty?
     all_substrings << leading_substrings(string)
-    string.delete!(string.chr)
+    str.delete_prefix!(str.chr)
   end
   all_substrings.flatten
 end
 
-
+p substrings('abcde')
 p substrings('abcde') == [
   'a', 'ab', 'abc', 'abcd', 'abcde',
   'b', 'bc', 'bcd', 'bcde',
