@@ -24,4 +24,6 @@ D
 A
 
 - Convert integer to array
-- 
+  - convert integer into string then call ``chars`` on string to get array of individual numbers
+- return last ``n`` digits of array and call ``rotate_array`` to return new array of rotated digits
+- convert array back to integer

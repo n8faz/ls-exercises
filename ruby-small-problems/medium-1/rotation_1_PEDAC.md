@@ -19,8 +19,11 @@ D
 
 - Input: Array
 - Output: Array
-- ``#pop``
+- ``#push``
 
 A
 
 - add first value of array to end of array while removing that value from the beginning of array
+- initialize variable to reference array starting from index 1 of array given as argument
+- call push on that array to add the variable at index 0 of given array to new array
+- return new array
